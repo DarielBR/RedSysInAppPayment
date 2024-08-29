@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.redsys.tpvvinapplibrary.ErrorResponse
 import com.redsys.tpvvinapplibrary.IPaymentResult
 import com.redsys.tpvvinapplibrary.ResultResponse
@@ -48,6 +49,17 @@ class RedSysTestViewModel: ViewModel() {
     fun setResultResponse(newValue: ResultResponse?){
         viewModelScope.launch {
             uiState = uiState.copy(resultResponse = newValue)
+        }
+    }
+
+    fun onAmountChange(newValue: String){
+        val doubleAmount = newValue.toDoubleOrNull()
+        viewModelScope.launch{
+            if (doubleAmount != null) {
+                uiState = uiState.copy(amount = doubleAmount)
+            } else {
+                uiState = uiState.copy(amount = 0.0)
+            }
         }
     }
     /*endregion*/

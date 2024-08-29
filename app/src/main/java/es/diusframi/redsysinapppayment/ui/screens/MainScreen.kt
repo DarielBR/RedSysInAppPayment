@@ -1,14 +1,21 @@
-package es.diusframi.redsystest.ui.screens
+package es.diusframi.redsysinapppayment.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -82,14 +89,19 @@ fun MainScreen(
                 .padding(horizontal = 20.dp)
         ) {
             Button(
-                onClick = { viewModel?.doRedSysPayment(10.0, context) },
+                onClick = { viewModel?.doRedSysPayment(
+                    10.0,
+                    context
+                ) },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.surface
                 ),
                 elevation = ButtonDefaults.buttonElevation(
                     defaultElevation = 2.dp
                 ),
-                shape = MaterialTheme.shapes.medium
+                shape = MaterialTheme.shapes.medium,
+                modifier = modifier
+                    .fillMaxWidth()
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.logo_vector_redsys),

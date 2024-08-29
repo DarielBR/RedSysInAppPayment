@@ -15,7 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import es.diusframi.fidelizacion.navigation.AppDestinations
 import es.diusframi.redsystest.ui.screens.ErrorScreen
-import es.diusframi.redsystest.ui.screens.MainScreen
+import es.diusframi.redsysinapppayment.ui.screens.MainScreen
 import es.diusframi.redsystest.ui.screens.SuccessScreen
 import es.diusframi.redsysinapppayment.viewmodel.RedSysTestViewModel
 

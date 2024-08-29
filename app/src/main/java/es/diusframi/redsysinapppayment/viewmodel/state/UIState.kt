@@ -12,5 +12,6 @@ data class UIState (
     val licenceToken: String = "",
     //Loyalty State
     val isLoading: Boolean? = false,
+    val amount: Double = 0.0,
     val resultResponse: ResultResponse? = null,
 )
